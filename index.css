@@ -1,70 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     background-image: url(./image/blackyellow.jpg);
-    background-size:1920px 1080px;
-
-    margin: 0;
-    padding: 0;
+    /* background-size:1920px 1080px; */
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100dvh;
+    color: #444;
 }
-
+::selection {
+    background-color: #1eebb844;
+    color: #fff;
+}
 .login-container {
-    opacity: 0.98;
-    width: 350px;
-    margin:26vh 39vw;
-    background:#b3d8ff;
-    padding: 20px 40px 20px 20px;
+    width: clamp(320px, 90%, 400px);
+    background:#b3d8ffaa;
+    backdrop-filter: blur(20px);
+    padding: 15px 20px;
     border-radius: 30px;
-    box-shadow:0px 2px 10px#000000;
-    
+    box-shadow: 0px 2px 30px #0001;
+    display: grid;
+    grid-template-rows: 1fr .5fr 3fr;
+    aspect-ratio: 1 / 1;
+}
+.login-container > * {
+    /* border: 1px solid red; */
 }
 
 h3 {
     text-align: center;
     font-size: medium;
-}
-
-.group {
-    margin-bottom: 30px;
+    /* margin-bottom: 10px; */
 }
 
 .group label {
-    display: block;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
-
+.group > input:active {
+    border: none;
+    outline: 1px solid transparent;
+}
+.group > input:focus {
+    outline: 1px solid #fff3;
+    border-bottom: 1px solid #fff;
+}
+.group > input:valid {
+    border-bottom: 1px solid #0f0d;
+}
 .group input {
     width: 100%;
+    border: none;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
+    outline: 1px solid transparent;
+    border-radius: 1px;
+    background: #fff2;
+    /* backdrop-filter: blur(20px); */
+    border-bottom: 1px solid transparent;
+}
+.group input {
+    font-size: 16px; 
 }
 .group input[type="password"]{
-    font-size: 16px;
+    /* (❁´◡`❁) */
 }
 .group input[type="email"]{
-    font-size: 16px;
     font-family: cursive;
 }
-
 .btn {
     font-size: 15px;
-    font-family:cursive;
+    font-family: cursive;
     font-weight: bold;
-    width: 370px;
+    width: 100%;
     padding: 10px;
-    background: rgb(230, 200, 0);
-    border: 0;
-    color: #ffffff;
+    background: rgba(230, 200, 0, .1);
+    border: 2px solid rgba(230, 200, 0, .5);
+    color: rgba(230, 200, 0, 1);
     border-radius: 15px;
     cursor: pointer;
+    transition: all .3s;
 }
 
 .btn:hover {
-    background: #3a3a3a;
-    color:rgb(230, 200, 0);
+    background:rgb(230, 200, 0);
+    color: #fff;
 }
 h1{
-    text-align: center;
-    text-shadow:1px 2px #919191;
+    text-shadow: 1px 1px 7px #919191;
     font-size: 37px;
+    display: grid;
+    place-items: center;
+    /* margin-bottom: 10px; */
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
